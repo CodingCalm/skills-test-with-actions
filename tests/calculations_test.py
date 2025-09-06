@@ -60,30 +60,60 @@ def test_get_nth_fibonacci_one():
     # Assert
     assert result == 1
 
-    def test_area_of_circle_negative_radius():
+def test_area_of_circle_negative_radius():
         """Test area_of_circle with a negative radius should raise ValueError."""
         with pytest.raises(ValueError):
             area_of_circle(-1)
 
-
-    def test_get_nth_fibonacci_negative():
+def test_get_nth_fibonacci_negative():
         """Test get_nth_fibonacci with negative n should raise ValueError."""
         with pytest.raises(ValueError):
             get_nth_fibonacci(-5)
 
 
-    def test_area_of_circle_large_radius():
+def test_area_of_circle_large_radius():
         """Test area_of_circle with a large radius."""
         radius = 100
         result = area_of_circle(radius)
         assert abs(result - (math.pi * 100 ** 2)) < 1e-5
 
 
-    def test_get_nth_fibonacci_two():
+def test_area_of_circle_negative_radius():
+        """Test area_of_circle with a negative radius should raise ValueError."""
+        with pytest.raises(ValueError):
+            area_of_circle(-1)
+
+
+def test_get_nth_fibonacci_negative():
+        """Test get_nth_fibonacci with negative n should raise ValueError."""
+        with pytest.raises(ValueError):
+            get_nth_fibonacci(-5)
+
+
+def test_area_of_circle_large_radius():
+        """Test area_of_circle with a large radius."""
+        radius = 100
+        result = area_of_circle(radius)
+        assert abs(result - (math.pi * 100 ** 2)) < 1e-5
+
+
+def test_get_nth_fibonacci_two():
         """Test get_nth_fibonacci with n=2."""
         assert get_nth_fibonacci(2) == 1
 
 
-    def test_get_nth_fibonacci_five():
+def test_get_nth_fibonacci_five():
         """Test get_nth_fibonacci with n=5."""
         assert get_nth_fibonacci(5) == 5
+
+
+def test_get_nth_fibonacci_ten():
+        """Test get_nth_fibonacci with n=10."""
+        assert get_nth_fibonacci(10) == 55
+
+
+def test_area_of_circle_float_radius():
+        """Test area_of_circle with a float radius."""
+        radius = 2.5
+        result = area_of_circle(radius)
+        assert abs(result - (math.pi * 2.5 ** 2)) < 1e-5
